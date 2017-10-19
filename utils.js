@@ -19,7 +19,7 @@ module.exports.addOptionals = (url, optionals, options) => {
     return finalUrl;
 };
 
-module.exports.apiRequest = (baseUrl, key, path, timeout, payload, callback) => {
+module.exports.apiRequest = (baseUrl, path, key, timeout, payload, callback) => {
     const config = {
         uri: `${baseUrl}${path}key=${key}`,
         timeout: timeout || 5000,
