@@ -8,7 +8,7 @@ Node.JS Shodan REST API client library
 All methods of the API need a valid key, you can get one [here](https://developer.shodan.io/api/requirements)
 
 ```javascript
-const ShodanClient = require('shodan-api-client');
+const ShodanClient = require('shodan-api');
 const client = new ShodanClient({
     key: [YOUR_API_KEY]
 });
