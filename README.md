@@ -90,6 +90,13 @@ Use this method to request Shodan to crawl a network. This method uses API scan 
  - `timeout` (number, optional) - Connection timeout in ms.(default: 5000)
 - `callback` (function) - Method to be executed when the request is finished. It has 2 parameters: `err` and `response`
 
+#### `scanProgress(id, options, callback)`
+Use this method to retrieve progress for a Shodan scan request to crawl a network.
+- `id` (string) - The id of the request obtained through the `scan` or `scanInternet` method
+- `options`, an object with:
+ - `timeout` (number, optional) - Connection timeout in ms.(default: 5000)
+- `callback` (function) - Method to be executed when the request is finished. It has 2 parameters: `err` and `response`
+
 #### `scanInternet(port, protocol, options, callback)`
 Use this method to request Shodan to crawl the Internet for a specific port. Thei method is restricted to security researchers and companies with a Shodan Data license, please check the [API Documentation](https://developer.shodan.io/api#shodan-scan-internet)
 - `port` (number) - The port that Shodan shoudl crawl the Internet for.
@@ -159,3 +166,46 @@ Information of the actual API version.
 - `options`, an object with:
  - `timeout` (number, optional) - Connection timeout in ms.(default: 5000)
 - `callback` (function) - Method to be executed when the request is finished. It has 2 parameters: `err` and `response`
+
+## Implemented REST API Methods:
+
+### Shodan Search Methods
+- [X] shodan/host/{ip}
+- [X] shodan/host/count
+- [X] shodan/host/search
+- [X] shodan/host/search/tokens
+- [X] shodan/ports
+
+### Shodan On-Demand Scanning
+- [X] shodan/protocols
+- [X] shodan/scan
+- [X] shodan/scan/internet
+- [X] shodan/scan/{id}
+
+### Shodan Network Alerts
+- [ ] shodan/alert
+- [ ] shodan/alert/{id}/info
+- [ ] shodan/alert/{id}
+- [ ] shodan/alert/info
+
+### Shodan Directory Methods
+- [X] shodan/query
+- [X] shodan/query/search
+- [X] shodan/query/tags
+
+### Account Methods
+- [X] account/profile
+
+### DNS Methods
+- [X] dns/resolve
+- [X] dns/reverse
+
+### Utility Methods
+- [ ] tools/httpheaders
+- [X] tools/myip
+
+### API Status Methods
+- [X] api-info
+
+### Experimental Methods
+- [ ] labs/honeyscore/{ip}
