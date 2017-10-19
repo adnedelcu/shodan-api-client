@@ -37,6 +37,6 @@ module.exports.apiRequest = (baseUrl, key, path, timeout, payload, callback) => 
     }
 
     request[method](config, (err, code, response) => {
-        callback(err, response ?: null);
+        callback(err, response ? response: null);
     });
 };
