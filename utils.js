@@ -37,7 +37,7 @@ module.exports.apiRequest = (baseUrl, path, key, timeout, payload, callback) => 
     }
 
     request[method](config, (err, response, body) => {
-        if (response.statusCode == 404) {
+        if (typeof response != 'undefined' && response.statusCode == 404) {
             callback(body, null);
         } else {
             callback(err, body ? body: null);
