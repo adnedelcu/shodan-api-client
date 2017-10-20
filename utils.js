@@ -37,7 +37,6 @@ module.exports.apiRequest = (baseUrl, path, key, timeout, payload, callback) => 
     }
 
     request[method](config, (err, response, body) => {
-        console.log(err, response.statusCode);
         if (response.statusCode == 404) {
             callback(body, null);
         } else {
