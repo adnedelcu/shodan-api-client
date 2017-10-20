@@ -36,7 +36,12 @@ module.exports.apiRequest = (baseUrl, path, key, timeout, payload, callback) => 
         config.form = payload;
     }
 
-    request[method](config, (err, code, response) => {
-        callback(err, response ? response: null);
+    request[method](config, (err, response, body) => {
+        console.log(err, response.statusCode);
+        if (response.statusCode == 404) {
+            callback(body, null);
+        } else {
+            callback(err, body ? body: null);
+        }
     });
 };
